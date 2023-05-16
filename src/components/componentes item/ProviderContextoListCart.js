@@ -47,7 +47,7 @@ const ProviderContextoListCart = ({ children }) => {
         const product = listCart.filter(product => product.id == id)
         const currentQuantity = product[0].quantity;
         const productWithNewQuantity = { ...product[0], quantity: currentQuantity - 1 }
-        // Si llegas a 0 tiene q borrar el item
+        // en cero borra el item tambien
         if (productWithNewQuantity.quantity == 0) {
             removeFromCart(id);
         } else {
@@ -56,7 +56,7 @@ const ProviderContextoListCart = ({ children }) => {
     }
 
     const addOne = (id) => {
-        // Agregate el control de stock para q no se vaya al choto
+        // nota: agregar control de stock
         const productsToMaintain = listCart.filter(product => product.id !== id)
         const product = listCart.filter(product => product.id == id)
         const currentQuantity = product[0].quantity;
