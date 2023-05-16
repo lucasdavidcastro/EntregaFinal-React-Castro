@@ -145,3 +145,20 @@
     border: none;
     font-size: 21px;
 }
+
+.cantreload {
+    background-color: #ccc;
+    display: flex;
+    text-align: center;
+    border: 1px solid black;
+    
+
+}
+
+#aumentar{
+    width: 20px;
+}
+
+#quitar{
+    width: 20px;
+}

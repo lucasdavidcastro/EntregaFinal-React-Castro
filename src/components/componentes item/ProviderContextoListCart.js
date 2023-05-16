@@ -42,8 +42,30 @@ const ProviderContextoListCart = ({ children }) => {
         setListCart(updateList);
     }
 
+    const removeOne = (id) => {
+        const productsToMaintain = listCart.filter(product => product.id !== id)
+        const product = listCart.filter(product => product.id == id)
+        const currentQuantity = product[0].quantity;
+        const productWithNewQuantity = { ...product[0], quantity: currentQuantity - 1 }
+        // Si llegas a 0 tiene q borrar el item
+        if (productWithNewQuantity.quantity == 0) {
+            removeFromCart(id);
+        } else {
+            setListCart([...productsToMaintain, productWithNewQuantity])
+        }
+    }
+
+    const addOne = (id) => {
+        // Agregate el control de stock para q no se vaya al choto
+        const productsToMaintain = listCart.filter(product => product.id !== id)
+        const product = listCart.filter(product => product.id == id)
+        const currentQuantity = product[0].quantity;
+        const newQuantity = { ...product[0], quantity: currentQuantity + 1 }
+        setListCart([...productsToMaintain, newQuantity])
+    }
+
     return (
-        <listCartContext.Provider value={{ removeFromCart, listCart, addProduct, clearCart }}>
+        <listCartContext.Provider value={{ removeFromCart, listCart, addProduct, clearCart, removeOne, addOne }}>
             {children}
         </listCartContext.Provider>
     );

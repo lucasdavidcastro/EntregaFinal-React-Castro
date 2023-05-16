@@ -10,6 +10,10 @@ const ContainerCart = () => {
 
     const { cartShow, setCartShow } = useContext(controllerShowCart);
     const { listCart, clearCart } = useContext(listCartContext);
+    function alertcompra(){
+        alert("Su producto será despachado a la brevedad")
+        window.location.reload(true);
+    }
 
     const style = {
         display: cartShow
@@ -46,7 +50,7 @@ const ContainerCart = () => {
 
             <div className="TerminarCompra">
 
-                <button className="terminar" >
+                <button className="terminar"onClick={alertcompra}>
                     Terminar compra
                 </button>
 

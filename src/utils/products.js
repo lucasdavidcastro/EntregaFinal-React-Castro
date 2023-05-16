@@ -10,7 +10,7 @@ const productos = [
             firstImage: "https://http2.mlstatic.com/D_NQ_NP_644879-MLA48656467017_122021-O.webp",
             secondImage: "https://media.ldlc.com/r1600/ld/products/00/05/74/25/LD0005742587_1_0005869333.jpg"
         },
-        price: 201000,
+        price: 20100,
     },
 
     {
@@ -36,7 +36,7 @@ const productos = [
             firstImage: "https://http2.mlstatic.com/D_NQ_NP_781239-MLA48656710911_122021-O.webp",
             secondImage: "https://http2.mlstatic.com/D_NQ_NP_859399-MLA49924537069_052022-O.webp"
         },
-        price: 300000,
+        price: 30000,
     },
 
     //procesadores

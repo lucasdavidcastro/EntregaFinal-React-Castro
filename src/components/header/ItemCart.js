@@ -2,6 +2,7 @@ import "../../styles/ItemCart.css"
 import deleteWhite from "../../img/deleteWhite.svg"
 import { useContext } from "react"
 import { listCartContext } from "../componentes item/ProviderContextoListCart"
+import AddCantCart from "../componentes item/AddCantCart"
 
 
 const ItemCart = ({ id, title, image, price, quantity }) => {
@@ -24,6 +25,7 @@ const ItemCart = ({ id, title, image, price, quantity }) => {
                 <span className="subtotal">Subtotal</span>
                 <span className="price">${price * quantity}</span>
             </div>
+            <div><AddCantCart id={id} quantity={quantity}/></div>
 
             <button className="delete" onClick={() => removeFromCart(id)}>
                 <img src={deleteWhite}></img>
